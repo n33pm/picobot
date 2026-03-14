@@ -396,16 +396,23 @@ Go to **Settings → Socket Mode** and enable it.
 
 ### 3. Generate an App-Level Token
 
-Go to **Settings → Socket Mode → App Level Token**. Generate a token with the `connections:write` scope. Copy it — it starts with `xapp-`.
+Go to **Settings → Socket Mode → App Level Token**.
+
+![slack_02](slack_02.png)
+
+ Generate a token with the `connections:write` scope. Copy it — it starts with `xapp-`.
 
 > Save this token now, you will need it shortly.
 
-![slack_02](slack_02.png)
 ![slack_03](slack_03.png)
 
 ### 4. Configure Bot Token Scopes
 
-Go to **Features → OAuth & Permissions → Bot Token Scopes** and add:
+Go to **Features → OAuth & Permissions → Bot Token Scopes**.
+
+![slack_04](slack_04.png)
+
+Scroll down to OAuth Permission Scopes and add:
 
 - `app_mentions:read`
 - `chat:write`
@@ -415,7 +422,6 @@ Go to **Features → OAuth & Permissions → Bot Token Scopes** and add:
 - `mpim:history`
 - `files:read`
 
-![slack_04](slack_04.png)
 ![slack_05](slack_05.png)
 
 ### 5. Enable Event Subscriptions
@@ -429,9 +435,11 @@ Go to **Features → Event Subscriptions** and enable Events. Then go to **Subsc
 
 ### 6. Install the App
 
-Click **Install to Workspace** and copy the **Bot User OAuth Token** (starts with `xoxb-`).
+Go back to **Features → OAuth & Permissions**. Click **Install to Workspace** and copy the **Bot User OAuth Token** (starts with `xoxb-`).
 
 > Save this token as well before continuing.
+
+![slack_07](slack_07.png)
 
 ### 7. Configure Picobot
 
@@ -481,9 +489,8 @@ Now mention your bot in a Slack channel (`@Picobot hello!`) or send it a DM. Pic
 
 **How the bot responds:**
 - **In channels** — only when @-mentioned (e.g. `@Picobot Hey, how are you pico?`)
-- **In DMs** — responds to every message
 
-![slack_07](slack_07.png)
+![slack_08](slack_08.png)
 
 ---
 
