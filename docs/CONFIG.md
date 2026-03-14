@@ -28,6 +28,13 @@ Picobot is configured via `~/.picobot/config.json`. Run `picobot onboard` to gen
       "token": "",
       "allowFrom": []
     },
+    "slack": {
+      "enabled": false,
+      "appToken": "",
+      "botToken": "",
+      "allowUsers": [],
+      "allowChannels": []
+    },
     "whatsapp": {
       "enabled": false,
       "dbPath": "",
@@ -330,7 +337,7 @@ The workspace directory (default `~/.picobot/workspace`) contains files that sha
   "agents": {
     "defaults": {
       "workspace": "/home/user/.picobot/workspace",
-      "model": "google/gemini-2.5-flash",
+      "model": "openrouter/free",
       "maxTokens": 8192,
       "temperature": 0.7,
       "maxToolIterations": 200,

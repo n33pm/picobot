@@ -392,11 +392,16 @@ Go to [Slack API Apps](https://api.slack.com/apps) and create a new app or selec
 
 Go to **Settings → Socket Mode** and enable it.
 
+![slack_01](slack_01.png)
+
 ### 3. Generate an App-Level Token
 
 Go to **Settings → Socket Mode → App Level Token**. Generate a token with the `connections:write` scope. Copy it — it starts with `xapp-`.
 
 > Save this token now, you will need it shortly.
+
+![slack_02](slack_02.png)
+![slack_03](slack_03.png)
 
 ### 4. Configure Bot Token Scopes
 
@@ -410,12 +415,17 @@ Go to **Features → OAuth & Permissions → Bot Token Scopes** and add:
 - `mpim:history`
 - `files:read`
 
+![slack_04](slack_04.png)
+![slack_05](slack_05.png)
+
 ### 5. Enable Event Subscriptions
 
 Go to **Features → Event Subscriptions** and enable Events. Then go to **Subscribe to bot events** and add:
 
 - `app_mention`
 - `message.im`
+
+![slack_06](slack_06.png)
 
 ### 6. Install the App
 
@@ -470,8 +480,10 @@ Edit `~/.picobot/config.json` and add your Slack settings:
 Now mention your bot in a Slack channel (`@Picobot hello!`) or send it a DM. Picobot will respond!
 
 **How the bot responds:**
-- **In channels** — only when @-mentioned (e.g. `@Picobot what's the weather?`)
+- **In channels** — only when @-mentioned (e.g. `@Picobot Hey, how are you pico?`)
 - **In DMs** — responds to every message
+
+![slack_07](slack_07.png)
 
 ---
 
@@ -503,9 +515,10 @@ Which channel would you like to connect?
 
   1) Telegram
   2) Discord
-  3) WhatsApp
+  3) Slack
+  4) WhatsApp
 
-Enter 1, 2 or 3: 3
+Enter 1, 2, 3 or 4: 3
 
 === WhatsApp Setup ===
 

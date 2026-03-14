@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo.png" alt="Picobot" width="250" height="150">
+  <img src="docs/logo.png" alt="Picobot" width="250" height="150">
   <h1 align="center">Picobot</h1>
   <p align="center"><strong>The AI agent that runs anywhere — even on a $5 VPS.</strong></p>
   <p align="center">
@@ -92,7 +92,7 @@ go build -o picobot ./cmd/picobot
 Actually the logic is simple and straightforward. Messages flow through a **Chat Hub** (inbound/outbound channels) into the **Agent Loop**, which builds context from memory/sessions/skills, calls the LLM via OpenAI-compatible API, and executes tools (filesystem, exec, web, etc.) before sending replies back through the hub.
 
 <p>
-  <img src="how-it-works.png" alt="How Picobot Works" width="600">
+  <img src="docs/how-it-works.png" alt="How Picobot Works" width="600">
 </p>
 
 Notes: Channel refers to communication channels (e.g., Telegram, Discord, Slack, WhatsApp, etc.).
@@ -154,7 +154,7 @@ Chat with your agent from your phone. Set up in 2 minutes:
 2. Add the token to config or pass as `TELEGRAM_BOT_TOKEN` env var
 3. Start the communication gateway
 
-See [HOW_TO_START.md](HOW_TO_START.md) for a detailed BotFather walkthrough.
+See [HOW_TO_START.md](docs/HOW_TO_START.md) for a detailed BotFather walkthrough.
 
 ### Discord Integration
 
@@ -168,7 +168,7 @@ Connect your agent to Discord servers:
 
 The bot will respond when mentioned in servers, or to all messages in DMs.
 
-See [HOW_TO_START.md](HOW_TO_START.md) for a detailed Discord Bot walkthrough.
+See [HOW_TO_START.md](docs/HOW_TO_START.md) for a detailed Discord Bot walkthrough.
 
 ### Slack Integration
 
@@ -222,7 +222,7 @@ Picobot uses a single JSON config at `~/.picobot/config.json`:
 }
 ```
 
-Supports any **OpenAI-compatible API** (OpenAI, OpenRouter, Ollama, etc.). See [CONFIG.md](CONFIG.md) for more details.
+Supports any **OpenAI-compatible API** (OpenAI, OpenRouter, Ollama, etc.). See [CONFIG.md](docs/CONFIG.md) for more details.
 
 ## CLI Reference
 
@@ -300,9 +300,9 @@ Want to contribute? Open an issue or PR with your ideas!
 
 ## Docs
 
-- [HOW_TO_START.md](HOW_TO_START.md) — step-by-step getting started guide
-- [CONFIG.md](CONFIG.md) — full configuration reference
-- [DEVELOPMENT.md](DEVELOPMENT.md) — development, testing, and Docker publishing
+- [HOW_TO_START.md](docs/HOW_TO_START.md) — step-by-step getting started guide
+- [CONFIG.md](docs/CONFIG.md) — full configuration reference
+- [DEVELOPMENT.md](docs/DEVELOPMENT.md) — development, testing, and Docker publishing
 - [docker/README.md](docker/README.md) — Docker deployment guide
 
 ## License
