@@ -26,13 +26,22 @@ RUN set -eux; \
     go build -ldflags="-s -w" -o /picobot ./cmd/picobot
 
 # ---- Runtime Stage ----
-FROM gcr.io/distroless/static-debian12:nonroot
+FROM alpine:3.20
+
+RUN apk add --no-cache ca-certificates tzdata bash curl jq
+
+# Create non-root user
+RUN addgroup -S picobot && adduser -S picobot -G picobot
+
+# Picobot home directory (config + workspace live here)
+ENV PICOBOT_HOME=/home/picobot/.picobot
+RUN mkdir -p ${PICOBOT_HOME} && chown -R picobot:picobot /home/picobot
 
 COPY --from=builder /picobot /usr/local/bin/picobot
+RUN chmod +x /usr/local/bin/picobot
 
-# Distroless 'nonroot' image runs as uid 65534 by default.
-# Home directory for the nonroot user is /home/nonroot.
-ENV PICOBOT_HOME=/home/nonroot/.picobot
+USER picobot
+WORKDIR /home/picobot
 
 ENTRYPOINT ["picobot"]
 CMD ["gateway"]
